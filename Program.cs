@@ -21,3 +21,11 @@ double structure = double.Parse(Console.ReadLine());
 double average = (comScience + english + math + net + structure)/5;
 Console.WriteLine($"Average: {average}");
 Console.WriteLine();
+
+if(average >= 3 && average <= 5)
+    Console.WriteLine("You are passed");
+else if(average < 3 && average > 0)
+    Console.WriteLine("You are failed");
+else
+    Console.WriteLine("You entered wrong grade, please check again");
+
