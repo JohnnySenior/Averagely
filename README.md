@@ -6,11 +6,11 @@ I have used basic functions and arithmetic operations:
 
 * Console input/output
 
-    ![Alt text](image.png)
+    ![Alt text](./Assets/image.png)
 
 * Arithmetic operation
 
-    ![Alt text](image-1.png)
+    ![Alt text](./Assets/image-1.png)
 
 If you want to run my code in your local computer, you can clone my code.
 
