@@ -1,6 +1,6 @@
 # Averagely
 
-Usefull app for student who calculate average grade of subjects.
+Usefull app for student who calculate average grade of subjects. Then app shows which you are pass & fail.
 
 I have used basic functions and arithmetic operations:
 
