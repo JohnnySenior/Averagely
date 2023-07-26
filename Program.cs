@@ -1,26 +1,22 @@
-﻿Console.WriteLine("You can calculate your average grade with this app");
+﻿Console.WriteLine("");
+Console.WriteLine("You can calculate your average grade with this app");
 Console.WriteLine("Enter all grades per subject below");
 Console.WriteLine("Note: You should enter [1 ~ 5]");
-Console.WriteLine();
+Console.Write("How many subject do you want to enter: ");
 
-Console.Write("Computer Science: ");
-double comScience = double.Parse(Console.ReadLine()); 
+int numberOfSubject = int.Parse(Console.ReadLine());
+Console.Clear();
+double totalGrade = 0;
 
-Console.Write("English: ");
-double english = double.Parse(Console.ReadLine()); 
+for(int iteration = 1; iteration <= numberOfSubject; iteration++)
+{
+    Console.Write($"Subject {iteration}: ");
+    double grade = int.Parse(Console.ReadLine());
+    totalGrade += grade;
+}
 
-Console.Write("Mathematics: ");
-double math = double.Parse(Console.ReadLine()); 
-
-Console.Write(".Net Programming: ");
-double net = double.Parse(Console.ReadLine()); 
-
-Console.Write("Data Structure: ");
-double structure = double.Parse(Console.ReadLine()); 
-
-double average = (comScience + english + math + net + structure)/5;
-Console.WriteLine($"Average: {average}");
-Console.WriteLine();
+double average = totalGrade / numberOfSubject;
+Console.WriteLine($"Average grade: {average}");
 
 if(average >= 3 && average <= 5)
     Console.WriteLine("You are passed");
