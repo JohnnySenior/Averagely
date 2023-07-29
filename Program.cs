@@ -4,25 +4,8 @@ Console.WriteLine("Enter all grades per subject below");
 Console.WriteLine("Note: You should enter [1 ~ 5]");
 Console.Write("How many subject do you want to enter: ");
 
-int numberOfSubject = 0;
-
-try
-{
-    numberOfSubject = int.Parse(Console.ReadLine());
-    Console.Clear();
-}
-catch (FormatException formatException)
-{
-    Console.WriteLine("The input is not in a correct format");
-}
-catch (OverflowException overflowException)
-{
-    Console.WriteLine("Value is too large or too small, take a look data type.");
-}
-catch (Exception exception)
-{
-    Console.WriteLine(exception.Message);
-}
+int numberOfSubject = int.Parse(Console.ReadLine());
+Console.Clear();
 
 double totalGrade = 0;
 
