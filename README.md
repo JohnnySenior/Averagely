@@ -16,13 +16,9 @@ I have used basic functions and arithmetic operations:
 
     ![image](./Assets/if.png)
 
-* `try catch` operation
-
-    ![image](./Assets/try.png)
-
 ### Result:
 
-![gif](./Assets/Animation.gif)
+![gif](./Assets/Animation-1.gif)
 
 If you want to run my code in your local computer, you can clone my code.
 
@@ -67,16 +63,4 @@ Features Added:
 * App show you which you are passed or fail.
 * You can choose how many subject calculate.
 
-Click green word if you want to go **[Version 3.0](https://github.com/JohnnySenior/Averagely/tree/releases/v3.0)**
-
-### V3.1
-
-We are excited to announce the release of version 3.1 of our Averagely App! This release introduces `try catch` operation.
-
-Features Added:
-
-* Add `try catch` operation.
-    * Format Exception: if you enter wrong data type value. App will shows you.
-    * Overflow Exception: if you enter too large value or too small, you can see overflow exception.
-  
-### Note: You are in **_Version 3.1_** now.
+### Note: You are in **_Version 3.0_** now.
