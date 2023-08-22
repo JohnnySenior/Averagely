@@ -17,7 +17,7 @@ catch (FormatException formatException)
 }
 catch (OverflowException overflowException)
 {
-    Console.WriteLine("Value is too large or too small, take a look data type");
+    Console.WriteLine("Value is too large or too small, take a look data type.");
 }
 catch (Exception exception)
 {
