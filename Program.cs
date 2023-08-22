@@ -17,7 +17,7 @@ catch (FormatException formatException)
 }
 catch (OverflowException overflowException)
 {
-    Console.WriteLine("Value is too large or too small, take a look data type.");
+    Console.WriteLine("Value is too large or too small, take a look data type");
 }
 catch (Exception exception)
 {
@@ -41,5 +41,5 @@ if (average >= 3 && average <= 5)
 else if (average < 3 && average > 0)
     Console.WriteLine("You are failed");
 else
-    Console.WriteLine("You entered wrong grade, please check again");
+    Console.WriteLine("You entered wrong grade, please check again.");
 
