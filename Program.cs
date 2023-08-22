@@ -41,5 +41,5 @@ if (average >= 3 && average <= 5)
 else if (average < 3 && average > 0)
     Console.WriteLine("You are failed");
 else
-    Console.WriteLine("You entered wrong grade, please check again");
+    Console.WriteLine("You entered wrong grade, please check again.");
 
