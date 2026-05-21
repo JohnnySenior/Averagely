@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace AVERAGELY
 {
@@ -6,52 +6,94 @@ namespace AVERAGELY
     {
         public static void Main()
         {
-            int numberOfSubject = 0;
-            decimal average = 0, totalGrade = 0;
-            Input();
-            CalculateTheAverageValue(numberOfSubject, average, totalGrade);
+            PrintInstructions();
 
+            int numberOfSubject = ReadNumberOfSubjects();
+            if (numberOfSubject <= 0)
+                return;
+
+            decimal average = CalculateAverage(numberOfSubject);
+            PrintResult(average);
         }
-        public static void Input()
+
+        private static void PrintInstructions()
         {
             Console.WriteLine("");
             Console.WriteLine("You can calculate your average grade with this app");
             Console.WriteLine("Enter all grades per subject below");
             Console.WriteLine("Note: You should enter [1 ~ 5]");
-            Console.Write("How many subject do you want to enter: ");  
         }
-        
 
-        public static void CalculateTheAverageValue(int numberOfSubject, decimal average, decimal totalGrade)
+        private static int ReadNumberOfSubjects()
         {
+            Console.Write("How many subjects do you want to enter: ");
             try
             {
-                numberOfSubject = int.Parse(Console.ReadLine());
+                int count = int.Parse(Console.ReadLine());
                 Console.Clear();
+                return count;
             }
-            catch (FormatException formatException)
+            catch (FormatException)
             {
                 Console.WriteLine("The input is not in a correct format");
+                return 0;
             }
-            catch (OverflowException overflowException)
+            catch (OverflowException)
             {
                 Console.WriteLine("Value is too large or too small, take a look data type");
+                return 0;
             }
-            catch (Exception exception)
+            catch (Exception e)
             {
-                Console.WriteLine(exception.Message);
+                Console.WriteLine(e.Message);
+                return 0;
             }
-            
+        }
+
+        private static decimal CalculateAverage(int numberOfSubject)
+        {
+            decimal totalGrade = 0;
+
             for (int iteration = 1; iteration <= numberOfSubject; iteration++)
             {
-                Console.Write($"Subject {iteration}: ");
-                decimal grade = decimal.Parse(Console.ReadLine());
-                totalGrade += grade;
+                totalGrade += ReadGrade(iteration);
             }
 
-            average = totalGrade / numberOfSubject;
+            return totalGrade / numberOfSubject;
+        }
+
+        private static decimal ReadGrade(int subjectNumber)
+        {
+            while (true)
+            {
+                Console.Write($"Subject {subjectNumber}: ");
+                try
+                {
+                    decimal grade = decimal.Parse(Console.ReadLine());
+
+                    if (grade < 1 || grade > 5)
+                    {
+                        Console.WriteLine("Grade must be between 1 and 5. Try again.");
+                        continue;
+                    }
+
+                    return grade;
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("The input is not in a correct format. Try again.");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+        }
+
+        private static void PrintResult(decimal average)
+        {
             Console.WriteLine($"Average grade: {average:f2}");
-            
+
             if (average >= 3 && average <= 5)
                 Console.WriteLine("You are passed");
             else if (average < 3 && average > 0)
